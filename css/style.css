@@ -3,16 +3,26 @@
 }
 
 body {
-  margin: 0;
   padding: 0;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
+  width: 550px;
+  margin: 0 auto;
 }
 img {
   width: 100%;
 }
+.container {
+  height: 100vh;
+  max-width: 550px;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f6f7fb;
+}
 
 nav {
-  width: 100%;
   max-width: 90%;
   display: flex;
   justify-content: space-between;
@@ -26,16 +36,6 @@ nav {
 }
 .icon-logo {
   width: 84px;
-}
-.container {
-  height: 100vh;
-  max-width: 550px;
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #f6f7fb;
 }
 
 .container-main {
@@ -55,12 +55,8 @@ nav {
   border-radius: 15px;
 }
 
-.container-main:first-child {
-}
-
 .accept-state {
   width: 234px;
-  display: block;
   transform: rotate(-30deg);
 }
 
