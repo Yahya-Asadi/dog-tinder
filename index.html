@@ -3,6 +3,7 @@
   <head>
     <meta lang="en" />
     <meta charset="utf-8" />
+    <meta nampe="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,17 +20,13 @@
         <img src="images/logo.png" class="icon-logo" />
         <img src="images/icon-chat.png" class="icon-chat" />
       </nav>
-      <div class="container-main">
+      <div class="container-main" id="main-content">
         <div class="accept-state-div">
           <img
-            class="state-like"
+            class="accept-state"
+            id="accept-state-img"
             alt="Liked before"
-            src="images/badge-like.png"
-          />
-          <img
-            class="state-nope"
-            alt="Liked before"
-            src="images/badge-nope.png"
+            src=""
           />
         </div>
         <div class="chat-div">
@@ -38,8 +35,8 @@
         </div>
       </div>
       <div class="swipe-div">
-        <button class="swipe-img dont-like"></button>
-        <button class="swipe-img like"></button>
+        <button id="dont-like-btn" class="swipe-img dont-like"></button>
+        <button id="you-like-btn" class="swipe-img like"></button>
       </div>
     </div>
   </body>

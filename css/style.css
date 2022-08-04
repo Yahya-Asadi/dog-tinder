@@ -53,7 +53,7 @@ nav {
   padding-bottom: 0.88em;
   background-size: cover;
   background-position: center;
-  background-image: url("../images/dog-teddy.jpg");
+  /* background-image: url("../images/dog-teddy.jpg"); */
   border-radius: 15px;
 }
 
@@ -63,8 +63,7 @@ nav {
   transform: rotate(-30deg);
 }
 
-.state-nope,
-.state-like {
+.accept-state {
   display: none;
 }
 
