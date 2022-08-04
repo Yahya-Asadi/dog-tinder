@@ -1,66 +1,94 @@
-const dogs = {
-	teddy: {
-		name: "teddy",
-		age: 34,
-		image: "images/dog-teddy.jpg",
-		likeStatus: undefined,
-	},
-	rex: {
-		name: "rex",
-		age: 30,
-		image: "images/dog-rex.jpg",
-		likeStatus: undefined,
-	},
-	bella: {
-		name: "bella",
-		age: 35,
-		image: "images/dog-bella.jpg",
-		likeStatus: undefined,
-	},
-}
+const dogs = [
+    {
+        name: "Rex",
+        avatar: "images/dog-rex.jpg",
+        age: 25,
+        bio: "Art. Literature. Natural wine. Yoga.",
+        hasBeenSwiped: false,
+        hasBeenLiked: false
+    },{
+        name: "Bella",
+        avatar: "images/dog-bella.jpg",
+        age: 43,
+        bio: "Yup, that's my owner. U can meet him if you want",
+        hasBeenSwiped: false,
+        hasBeenLiked: false
+    },
+    {
+        name: "Teddy",
+        avatar: "images/dog-teddy.jpg",
+        age: 30,
+        bio: "How you doin?",
+        hasBeenSwiped: false,
+        hasBeenLiked: false
+    }
+]
 
-let dogsArray = ["teddy", "rex", "bella"]
 let currentDogIndex = 0
-render(dogs[dogsArray[currentDogIndex]])
-
-
-function like(dog){
-	dog.likeStatus = true;
-}
+let likeStatusChange = true
+render(dogs[currentDogIndex])
 
 function render(dog){
-	document.getElementsByClassName("container-main")[0].style.backgroundImage = `url("${dog.image}")`
-	if (dog.likeStatus) {
+	document.getElementsByClassName("container-main")[0].style.backgroundImage = `url("${dog.avatar}")`
+	if (dog.hasBeenLiked) {
 		document.getElementById("accept-state-img").src="images/badge-like.png"
 		document.getElementsByClassName("accept-state")[0].style.display = "block"
 	}
-	else if (dog.likeStatus === false) {
+	else if (dog.hasBeenLiked === false && dog.hasBeenSwiped) {
 		document.getElementById("accept-state-img").src="images/badge-nope.png"
 		document.getElementsByClassName("accept-state")[0].style.display = "block"
 	}
 }
 
-document.getElementById("dont-like-btn").addEventListener("click", () => {
-		dogs[dogsArray[currentDogIndex]].likeStatus = false
-		if (currentDogIndex+1 < dogsArray.length){
-			currentDogIndex++
-			render(dogs[dogsArray[currentDogIndex]])
-		}
-		else {
-			currentDogIndex = 0;
-			render(dogs[dogsArray[currentDogIndex]])
+document.getElementById("dont-like-btn").addEventListener("click",
+	() => {
+		if (likeStatusChange) {
+			dogs[currentDogIndex].hasBeenSwiped = true
+			dogs[currentDogIndex].hasBeenLiked = false
+			document.getElementById("accept-state-img").src="images/badge-nope.png"
+			document.getElementsByClassName("accept-state")[0].style.display = "block"
+			likeStatusChange = false
+			setTimeout(
+				() => {
+					likeStatusChange = true
+					if (currentDogIndex+1 < dogs.length){
+						console.log("here")
+						currentDogIndex++
+						render(dogs[currentDogIndex])
+					}
+					else {
+						currentDogIndex = 0;
+						render(dogs[currentDogIndex])
+					}
+				},
+				6000
+			)
 		}
 	}
 )
-document.getElementById("you-like-btn").addEventListener("click", () => {
-		dogs[dogsArray[currentDogIndex]].likeStatus = true
-		if (currentDogIndex+1 < dogsArray.length){
-			currentDogIndex++
-			render(dogs[dogsArray[currentDogIndex]])
-		}
-		else {
-			currentDogIndex = 0;
-			render(dogs[dogsArray[currentDogIndex]])
+document.getElementById("you-like-btn").addEventListener("click",
+	() => {
+		if (likeStatusChange) {
+			dogs[currentDogIndex].hasBeenSwiped = true
+			dogs[currentDogIndex].hasBeenLiked = true
+			document.getElementById("accept-state-img").src="images/badge-like.png"
+			document.getElementsByClassName("accept-state")[0].style.display = "block"
+			likeStatusChange = false
+			setTimeout(
+				() =>{
+					likeStatusChange = true
+					if (currentDogIndex+1 < dogs.length){
+						currentDogIndex++
+						render(dogs[currentDogIndex])
+					}
+					else {
+						currentDogIndex = 0;
+						render(dogs[currentDogIndex])
+					}
+				}, 
+				6000
+			)
 		}
 	}
 )
+

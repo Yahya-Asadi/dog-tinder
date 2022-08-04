@@ -124,7 +124,6 @@ nav {
 
 @media (min-width: 650px) {
   .container {
-    border: 1px solid green;
     max-width: 550px;
   }
 }
