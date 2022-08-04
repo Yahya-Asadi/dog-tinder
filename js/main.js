@@ -38,6 +38,10 @@ function render(dog){
 		document.getElementById("accept-state-img").src="images/badge-nope.png"
 		document.getElementsByClassName("accept-state")[0].style.display = "block"
 	}
+	else {
+		document.getElementById("accept-state-img").src=""
+		document.getElementsByClassName("accept-state")[0].style.display = "none"
+	}
 }
 
 document.getElementById("dont-like-btn").addEventListener("click",
