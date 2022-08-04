@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+}
+img {
+  width: 100%;
+}
+
+nav {
+  width: 100%;
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.33em 0;
+}
+
+.icon-profile,
+.icon-chat {
+  width: 34px;
+  height: 34px;
+}
+.icon-logo {
+  width: 84px;
+}
+.container {
+  height: 100vh;
+  max-width: 550px;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f6f7fb;
+}
+
+.container-main {
+  width: 100%;
+  max-width: 97%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  object-fit: cover;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding-left: 1.1em;
+  padding-bottom: 0.88em;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../images/dog-teddy.jpg");
+  border-radius: 15px;
+}
+
+.container-main:first-child {
+}
+
+.accept-state {
+  width: 234px;
+  display: block;
+  transform: rotate(-30deg);
+}
+
+.chat-div {
+  margin-top: auto;
+}
+.name,
+.chat {
+  color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+.name {
+  font-size: 1.88rem;
+  font-weight: 600;
+}
+
+.chat {
+  font-size: 1.333rem;
+  font-weight: 400;
+}
+
+.swipe-div {
+  display: flex;
+  justify-content: center;
+}
+.swipe-img {
+  margin: 1.3em;
+  padding: 1em;
+  border-radius: 100px;
+  width: 91px;
+  height: 91px;
+  border: none;
+  background: #ffffff;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 10px 20px #e9e9ea;
+}
+.like {
+  background-image: url("../images/icon-heart.png");
+}
+
+.like:hover,
+.like:focus {
+  background-color: #dbfff4;
+  cursor: pointer;
+}
+
+.dont-like {
+  background-image: url("../images/icon-cross.png");
+}
+
+.dont-like:hover,
+.dont-like:focus {
+  background-color: #ffe7ef;
+  cursor: pointer;
+}
